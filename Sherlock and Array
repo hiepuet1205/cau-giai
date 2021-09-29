@@ -1,0 +1,23 @@
+// cach 1
+//
+
+string balancedSums(vector<int> arr) {
+    int total = 0;
+
+    for(auto i : arr) {
+        total += i;
+    }
+
+    int totalLeft = 0;
+
+    for(auto i : arr) {
+        if(totalLeft*2 == total - i){
+            return "YES";
+            break;
+        }
+
+        totalLeft += i;
+    }
+
+    return "NO";
+}
