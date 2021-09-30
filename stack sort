@@ -1,0 +1,39 @@
+#include <iostream>
+#include <stack>
+
+using namespace std;
+
+stack<int> sort(stack<int> a){
+    stack<int> tempStack;
+
+    while(!a.empty()) {
+        int temp = a.top();
+        a.pop();
+
+        while(!tempStack.empty() && tempStack.top() < temp){
+            a.push(tempStack.top());
+            tempStack.pop();
+        }
+
+        tempStack.push(temp);
+    }
+
+    return tempStack;
+}
+
+int main(){
+    stack<int> a;
+
+    a.push(1);
+    a.push(2);
+    a.push(3);
+    a.push(4);
+    a.push(5);
+    
+    a = sort(a);
+    while(!a.empty()){
+        cout << a.top() << endl;
+        a.pop();
+    }
+    return 0;
+}
