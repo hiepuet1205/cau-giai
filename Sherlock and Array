@@ -1,5 +1,5 @@
 // cach 1
-//
+// O(n)
 
 string balancedSums(vector<int> arr) {
     int total = 0;
@@ -17,6 +17,29 @@ string balancedSums(vector<int> arr) {
         }
 
         totalLeft += i;
+    }
+
+    return "NO";
+}
+
+// cach 2
+// O(n^2)
+
+string balancedSums(vector<int> arr){
+    for(int i=0; i<arr.size()-1; i++){
+        int totalLeft = 0, totalRight = 0;
+        for(int j=0; j<i; j++){
+            totalLeft += arr[j];
+        }
+
+        for(int k=i+1; k<arr.size(); k++){
+            totalRight += arr[k];
+        }
+
+        if(totalRight == totalLeft){
+            return "YES";
+            break;
+        }
     }
 
     return "NO";
