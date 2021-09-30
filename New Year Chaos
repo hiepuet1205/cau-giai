@@ -1,3 +1,6 @@
+// cach 1
+// O(n)
+
 void minimumBribes(vector<int> q) {
     int count = 0;
 
@@ -15,6 +18,27 @@ void minimumBribes(vector<int> q) {
             }else {
                 cout<< "Too chaotic" << endl;
                 return;
+            }
+        }
+    }
+
+    cout << count << endl;
+}
+
+//cach 2
+// O(n^2)
+
+void minimumBribes(vector<int> q){
+    int count = 0;
+    for(int i=0; i<q.size(); i++){
+        if(q[i] - i - 1 > 2){
+            cout << "Too chaotic" << endl;
+            return;
+        }
+
+        for(int j=0; j<i ; j++){
+            if(q[j] > q[i]){
+                count++;
             }
         }
     }
