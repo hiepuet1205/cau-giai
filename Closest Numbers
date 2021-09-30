@@ -1,3 +1,6 @@
+// cach 2
+// O(n)
+
 vector<int> closestNumbers(vector<int> arr) {
     sort(arr.begin(), arr.end());
 
